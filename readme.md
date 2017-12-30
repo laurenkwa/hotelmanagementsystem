@@ -1,4 +1,4 @@
-Hotel Management System
+**Hotel Management System**
 
 Language used: Java
 
@@ -48,9 +48,11 @@ Instance Variables used:
 
 9. occupiedRoomCount - int representing total number of occupied rooms in hotel
 
-Constructor parameters: String url, String username, String password
 
-Methods: 
+**Constructor parameters:** String url, String username, String password
+
+
+**Methods:** 
 
 1. public boolean bookGuest(String guestName, int numberOfGuests, int roomNumber) 
 
@@ -77,7 +79,7 @@ Methods:
 	-- returns total number of occupied rooms in hotel
 	
 	
-Things to work on: 
+**Things to work on:** 
 1. exception handling:
 	- catch invalid roomNumber input
 	
