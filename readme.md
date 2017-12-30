@@ -8,9 +8,12 @@ Created by Lauren Kwa and Amy Hong
 **HotelSystemV1 Readme**
 
 **Creating a SQL database**
-	-create database "testhotel"
-	-create a table in the database, called "log"
-		create table log(
+
+  -create database "testhotel"
+	
+  -create a table in the database, called "log"
+  
+			create table log(
 			roomNumber int NOT NULL AUTO_INCREMENT,
 			roomType varchar(50),
 			maxOccupancy int,
@@ -19,8 +22,8 @@ Created by Lauren Kwa and Amy Hong
 			guestName varchar(50),
 			numberOfGuests int,
 			PRIMARY KEY (roomNumber) );
-			
-	- fill database with rooms and corresponding values, initialize status as "false", 	meaning vacant. 
+
+  - fill database with rooms and corresponding values, initialize status as "false", meaning vacant. 
 	
 
 **Class: HotelSystemV1**
@@ -50,21 +53,27 @@ Constructor parameters: String url, String username, String password
 Methods: 
 
 1. public boolean bookGuest(String guestName, int numberOfGuests, int roomNumber) 
+
 	-- books a new guest into hotel; returns true if success
 
 2. public boolean checkoutGuest(int roomNumber) 
+
 	-- checks out guest from hotel; returns true if success
 
 3. public String getOccupiedRooms()
+
 	-- returns String containing list of occupied rooms
 
 4. public String getVacantRooms() 
+
 	-- returns String containing list of vacant rooms
 
 5. public boolean checkRoomStatus(int roomNumber) 
+
 	-- checks if roomNumber parameter is occupied 
 	
 6. public int getOccupiedRoomCount()
+
 	-- returns total number of occupied rooms in hotel
 	
 	
