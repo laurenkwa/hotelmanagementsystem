@@ -46,6 +46,10 @@ layout
 
 ```
 activity_login.xml: we can use "design" tab on this file for preview. It's on the left-bottom side of Android Studio's UI. 
+
+    - ID: it's like a name of an object. we can reference objects from xml to java file through its ID. 
+    - for example: "import" android.widget.TextView;
+
 ```
 
 mipmap
@@ -64,7 +68,6 @@ strings.xml: strings for this app. (i.e. placeholder to prompt user to enter an 
 styles.xml: styles for this app.
     - android:theme="@style/AppTheme"
 ```
-
 
 ## hyperlinks for study
 
