@@ -39,6 +39,12 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
+    /** input login credentials from the user. */
+    EditText editTextId, editTextPassword;
+
+    /** user input login credentials, converted from EditText to String. */
+    String stringId, stringPw;
+
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -92,6 +98,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    public void button_sign_in(View view) {
+
     }
 
     private void populateAutoComplete() {
@@ -190,14 +200,33 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
+    /**
+     * Returns true if the input string contains alphanumeric character, "@", and ".".
+     * @param email input from the user
+     * @return true if the input string contains alphanumeric character, "@", and ".".
+     */
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
+
+        for (int i = 0; i < email.length; i++) {
+            char temp = email.charAt(i);
+
+            if ((temp < 'a' || temp > 'z') 
+                    && (temp < '0' || temp > '9')
+                    && temp != '@' && temp != '.')  {
+                return false;
+            }
+        }
+
+        return true;
     }
 
+    /**
+     * Returns true if the input string contains more than 8 characters.
+     * @param password input from the user
+     * @return true if the input string contains more than 8 characters
+     */
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 8;
     }
 
     /**
