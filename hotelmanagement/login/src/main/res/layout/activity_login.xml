@@ -72,6 +72,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
+                android:clickable="true"
+                android:onClick="button_sign_in" <!--java method(event handler)-->
                 android:textStyle="bold" />
 
         </LinearLayout>
