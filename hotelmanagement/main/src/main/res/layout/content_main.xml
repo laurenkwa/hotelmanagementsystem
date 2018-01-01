@@ -9,7 +9,6 @@
     tools:showIn="@layout/activity_main">
 
     <ListView
-        android:id="@+id/listview"
         android:layout_width="368dp"
         android:layout_height="495dp"
         tools:layout_editor_absoluteX="8dp"
