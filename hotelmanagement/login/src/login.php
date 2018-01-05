@@ -2,31 +2,75 @@
 # This file (login.php) is in ubuntu server. 
 # Don't actually include this file in this android project. This file is archived for record.
 # location: /var/www/html/login.php
-header('content-type: text/html; charset=utf-8'); 
-$connect = mysqli_connect("localhost", "username", "password") or die("Cannot access to SQL server.");
-
-mysqli_query("SET NAMES UTF8");
-mysql_select_db("testhotel", $connect);
+error_reporting(E_ALL); 
+ini_set('display_errors', 1); 
 
 
-session_start();
+# TODO: replace localhost, root, root_password, DB_name to actual information. It doesn't have to be root.
+$link = mysqli_connect("localhost", "root", "root_password", "DB_name"); 
 
-$u_id = $_POST[u_id];
-$sql = "SELECT u_pw FROM login WHERE u_id = '$u_id'";
+if (!$link) {
+   echo "Failed to connect to SQL: ";
+   echo mysqli_connect_error();
+   exit();
+}  
 
-$result = mysqli_query($sql);
+mysqli_set_charset($link, "utf8"); 
 
 
-// result of SQL query
-if ($result) {
-    $row = mysql_fetch_array($result);
-    
-    if (is_null($row[u_pw])) {
-        echo "Cannot find ID";
+// Reads and stores POSTed value
+$u_id = isset($_POST['u_id']) ? $_POST['u_id'] : '';
+$u_pw = isset($_POST['u_pw']) ? $_POST['u_pw'] : '';
+
+$db_id = "";
+$db_pw = "";
+
+
+if ($u_id != "" && $u_pw != "") {
+    $sql = "SELECT * FROM login WHERE u_id='$u_id'";
+    $result = mysqli_query($link, $sql);
+    $data = array();
+
+    $data = mysqli_fetch_row($result);
+    $db_id = $data[0];
+    $db_pw = $data[1];
+
+    if ($result) {
+        echo "SQL Query: Succeed";
+
+        if ($db_id == $u_id && $db_pw == $u_pw) {
+            # TODO: replace index.php to actual destination page.
+            header("Location: index.php");
+            die();
+        } else {
+            echo "The id and password you entered did not match our records. Please double-check and try again.";
+        }
     } else {
-        echo "$row[u_pw]";
+        echo "SQL Query Error occurred: "; 
+        echo mysqli_connect_error($link);
     }
 } else {
-    echo mysql_errno($connect);
+    echo "Please enter valid ID and password.";
+}
+
+mysqli_close($link);
+?>
+
+<?php
+if (!$android) {
+?>
+
+<!doctype html>
+<html>
+    <body>
+        <form action="" method="POST">
+            ID: <input type="text" id="u_id" name="u_id" />
+            PW: <input type="text" id="u_pw" name="u_pw" />
+            <input type="submit" />
+        </form>
+    </body>
+</html>
+
+<?php
 }
 ?>
