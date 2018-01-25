@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
 <GridPane fx:controller="login.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Label fx:id="userId" text="ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
@@ -9,4 +11,7 @@
 
     <Label fx:id="userPassword" text="password" GridPane.rowIndex="1" GridPane.columnIndex="0" />
     <TextField fx:id="userPasswordTextField" text="Enter your password" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+    <Button fx:id="signIn" text="Login" GridPane.rowIndex="2" GridPane.columnIndex="0" onAction="#processing" />
+    <Text fx:id="result" text="" GridPane.rowIndex="2" GridPane.columnIndex="1" />
 </GridPane>
