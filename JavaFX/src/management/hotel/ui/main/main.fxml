@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="management.hotel.ui.main.Main"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <Label maxWidth="Infinity" alignment="TOP_CENTER">
+            <text>Hotel Management System</text>
+            <padding>
+                <Insets top="10" left="15" bottom="10" right="15" />
+            </padding>
+        </Label>
+    </top>
+    <center>
+        <AnchorPane>
+            <Label fx:id="label1" text="label 1" />
+            <Text fx:id="text1" text="text 1" />
+            <Button fx:id="button1" text="button 1" />
+        </AnchorPane>
+    </center>
+    <bottom>
+        <Label maxWidth="Infinity" alignment="BOTTOM_CENTER">
+            <text>Footer goes here</text>
+            <padding>
+                <Insets top="10" left="15" bottom="10" right="15" />
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>
