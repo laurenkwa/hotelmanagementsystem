@@ -1,11 +1,11 @@
-package login;
+package management.hotel.ui.login;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class Controller {
+public class LoginController {
     public Label userId;
     public Label userPassword;
     public TextField userIdTextField;

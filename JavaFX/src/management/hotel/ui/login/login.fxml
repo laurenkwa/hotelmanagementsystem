@@ -4,7 +4,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
-<GridPane fx:controller="login.Controller"
+<GridPane fx:controller="management.hotel.ui.login.LoginController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Label fx:id="userId" text="ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
     <TextField fx:id="userIdTextField" text="Enter your ID" GridPane.rowIndex="0" GridPane.columnIndex="1" />
